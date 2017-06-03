@@ -3,8 +3,8 @@ import { getWeather } from './weather-service';
 
 export function renderWeatherPopup(container, city) {
     getWeather(city).then((weatherData) => {
-        const popup = document.createElement('div');
-        popup.innerHTML = `
+        const weatherPopup = document.createElement('div');
+        weatherPopup.innerHTML = `
             <h1>Weather in ${city}</h1>
             <h2>${moment().format('LLLL')}</h2>
             <dl>
@@ -23,12 +23,12 @@ export function renderWeatherPopup(container, city) {
             <button type="button" ref-close-btn>Close</button>
         `;
 
-        popup
+        weatherPopup
             .querySelector('[ref-close-btn]')
             .addEventListener('click', () => {
-                container.removeChild(popup);
+                container.removeChild(weatherPopup);
             });
 
-        container.appendChild(popup);
+        container.appendChild(weatherPopup);
     });
 }
