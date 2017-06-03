@@ -1,4 +1,3 @@
-import { renderWeatherPopup } from './weather-popup';
 
 export function renderWeatherButton (container, city) {
     container.innerHTML = `
@@ -10,6 +9,8 @@ export function renderWeatherButton (container, city) {
     container
         .querySelector('[ref-show-weather-btn]')
         .addEventListener('click', () => {
-            renderWeatherPopup(container, city);
+            import('./weather-popup').then(({renderWeatherPopup}) => {
+                renderWeatherPopup(container, city);
+            });
         });
 }

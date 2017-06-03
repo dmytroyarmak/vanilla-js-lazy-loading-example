@@ -1,3 +1,4 @@
+import * as moment from 'moment';
 import { getWeather } from './weather-service';
 
 export function renderWeatherPopup(container, city) {
@@ -5,6 +6,7 @@ export function renderWeatherPopup(container, city) {
         const popup = document.createElement('div');
         popup.innerHTML = `
             <h1>Weather in ${city}</h1>
+            <h2>${moment().format('LLLL')}</h2>
             <dl>
                 <dt>Temperature</dt>
                 <dd>${weatherData.main.temp}C</dd>

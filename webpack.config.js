@@ -18,7 +18,8 @@ module.exports = {
 				exclude: /node_modules/,
 				loader: 'babel-loader',
 				options: {
-					presets: ['es2015']
+					presets: [['es2015', {modules: false}]],
+					plugins: ['syntax-dynamic-import']
 				}
 			},
 			{
