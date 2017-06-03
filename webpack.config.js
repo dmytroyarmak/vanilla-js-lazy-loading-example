@@ -44,5 +44,9 @@ module.exports = {
 		]
 	},
 
-	plugins: [new UglifyJSPlugin(), new ExtractTextPlugin('style.css'), new HtmlWebpackPlugin()]
+	plugins: [
+		new UglifyJSPlugin(),
+		new ExtractTextPlugin('style.css'),
+		new HtmlWebpackPlugin()
+	]
 };

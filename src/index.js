@@ -1,1 +1,2 @@
-alert('Hello, world!');
+import { renderWeatherButton } from './weather-button';
+renderWeatherButton(document.body, 'Kyiv');
